@@ -1,0 +1,65 @@
+nav {
+  background-color: #4c096e;
+  .list {
+    color: white;
+    li {
+      cursor: pointer;
+      margin-inline: 10px;
+      font-weight: light;
+      opacity: 0.6;
+      font-size: 0.7rem;
+
+      &.active {
+        opacity: 1;
+        font-weight: bold;
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          width: 80%;
+          height: 2px;
+          background-color: #fc671a;
+          bottom: -5px;
+          left: 0;
+        }
+      }
+    }
+  }
+  .mobile-list {
+    li {
+      cursor: pointer;
+      margin-inline: 10px;
+      font-weight: light;
+      opacity: 0.6;
+      font-size: 0.7rem;
+
+      &.active {
+        opacity: 1;
+        font-weight: bold;
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          width: 80%;
+          height: 2px;
+          background-color: #fc671a;
+          bottom: -5px;
+          left: 0;
+        }
+      }
+    }
+  }
+  .lang {
+    select {
+      background: none;
+      border: none;
+      color: white;
+      option {
+        color: black;
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}

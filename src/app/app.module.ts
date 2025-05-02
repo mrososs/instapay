@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-// Factory function (مطلوبة لتحديد مكان ملفات الترجمة)
+import { AppRoutingModule } from './app-routing.module';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -17,6 +17,7 @@ export function HttpLoaderFactory(http: HttpClient) {
   imports: [
     BrowserModule,
     SharedModule,
+    AppRoutingModule,
     RouterModule,
     HttpClientModule,
     TranslateModule.forRoot({
@@ -26,6 +27,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient],
       },
     }),
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

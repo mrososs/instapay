@@ -1,4 +1,12 @@
 {
-    "HELLO": "Hello",
-    "WELCOME": "Welcome to the app"
+  "HELLO": "Hello",
+  "WELCOME": "Welcome to the app",
+  "navbar": {
+    "main": "Home",
+    "what": "What is Instapay",
+    "how": "How to Use",
+    "start": "Get Started",
+    "faq": "FAQ",
+    "contact": "Contact Us"
   }
+}

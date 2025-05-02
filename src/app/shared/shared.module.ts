@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -13,6 +14,7 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     TranslateModule,
+    RouterModule,
     FormsModule
   ],
   exports:[

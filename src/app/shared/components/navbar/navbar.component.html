@@ -1,4 +1,4 @@
-<nav class="py-6 relative shadow-md bg-white dark:bg-gray-800">
+<nav class="py-2 relative shadow-md">
   <div class="container mx-auto">
     <div class="flex justify-between items-center">
       <div class="logo">
@@ -6,12 +6,19 @@
           src="../../../../assets/images/Asset-5@4x-1536x262 1.png"
           alt="Logo"
           class="w-[8rem]"
+          *ngIf="selectedLang === 'ar'"
+        />
+        <img
+          src="../../../../assets/images/logo en.png"
+          alt="Logo"
+          class="w-[8rem]"
+          *ngIf="selectedLang === 'en'"
         />
       </div>
       <!-- Burger Icon for Small Screens -->
       <div class="md:hidden">
         <button (click)="toggleMenu()" class="">
-          <i class="pi pi-bars text-3xl text-blue-500"></i>
+          <i class="pi pi-bars text-3xl text-white"></i>
         </button>
       </div>
       <div class="list hidden md:block">
@@ -19,29 +26,33 @@
           <ng-container *ngTemplateOutlet="menuItems"></ng-container>
         </ul>
       </div>
-      <div class="lang hidden md:block" >
+      <div class="lang hidden md:block">
         <select
-        [(ngModel)]="selectedLang"
-        (change)="changeLanguage(selectedLang)"
-        class="border rounded p-3"
-      >
-        <option value="en">English</option>
-        <option value="ar">العربية</option>
-      </select>
+          [(ngModel)]="selectedLang"
+          (change)="changeLanguage(selectedLang)"
+          class="border rounded p-3"
+        >
+          <option value="en">English</option>
+          <option value="ar">العربية</option>
+        </select>
+      </div>
     </div>
-    </div>
-   
   </div>
   <!--for mobile-->
   <div
-    class="absolute top-20 left-0 w-full bg-white shadow-md p-4 md:hidden z-40"
+    class="absolute mobile-list top-14 left-0 w-full bg-white shadow-md p-4 md:hidden z-40"
     *ngIf="menuOpen"
   >
-    <ul class="flex flex-col items-start gap-4">
+    <ul class="flex flex-col items-center gap-4 ">
       <ng-container *ngTemplateOutlet="menuItems"></ng-container>
     </ul>
   </div>
   <ng-template #menuItems>
-        <li>الرئيسية</li>
+    <li [routerLink]="['/landing/home']" routerLinkActive="active">{{ resourcePath + "main" | translate }}</li>
+    <li>{{ resourcePath + "what" | translate }}</li>
+    <li>{{ resourcePath + "how" | translate }}</li>
+    <li>{{ resourcePath + "start" | translate }}</li>
+    <li>{{ resourcePath + "faq" | translate }}</li>
+    <li>{{ resourcePath + "contact" | translate }}</li>
   </ng-template>
 </nav>

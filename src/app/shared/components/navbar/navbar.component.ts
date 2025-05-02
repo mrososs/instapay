@@ -9,9 +9,14 @@ import { TranslateService } from '@ngx-translate/core';
 export class NavbarComponent implements OnInit {
   menuOpen = false;
   selectedLang = 'en';
+  resourcePath ='navbar.'
   constructor( private translate: TranslateService,) { }
 
   ngOnInit(): void {
+    this.selectedLang = localStorage.getItem('lang') || 'en';
+    this.translate.setDefaultLang(this.selectedLang);
+    document.documentElement.dir = this.selectedLang === 'ar' ? 'rtl' : 'ltr';
+
   }
   changeLanguage(lang: string) {
     console.log('Selected lang:', lang);
